@@ -5,6 +5,7 @@ import Forecast from "./pages/Forecast";
 import DNRRadar from "./pages/DNRRadar";
 import AIModels from "./pages/AIModels";
 import Alerts from "./pages/Alerts";
+import Compare from "./pages/Compare";
 import Placeholder from "./pages/Placeholder";
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
           <Route path="/dnr-radar" element={<DNRRadar />} />
           <Route path="/ai-models" element={<AIModels />} />
           <Route path="/alerts"    element={<Alerts />} />
-          <Route path="/compare"   element={<Placeholder />} />
+          <Route path="/compare"   element={<Compare />} />
           <Route path="/reports"   element={<Placeholder />} />
           <Route path="/learn"     element={<Placeholder />} />
           <Route path="/settings"  element={<Placeholder />} />

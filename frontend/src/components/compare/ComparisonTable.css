@@ -1,0 +1,97 @@
+.comparison-table-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ctable-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ctable-icon {
+  color: #1677ff;
+}
+
+.ctable-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+  flex: 1;
+}
+
+.ctable-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.ctable-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.ctable-main {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+}
+
+.ctable-main th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ctable-main td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--navy-dark, #071c35);
+  font-weight: 600;
+}
+
+.ctable-sticky {
+  position: sticky;
+  left: 0;
+  background: #ffffff;
+  z-index: 2;
+  text-align: left !important;
+  border-right: 1px solid #e2e8f0;
+}
+
+th.ctable-sticky {
+  background: #f8fafc;
+}
+
+.ctable-th-loc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ctable-th-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+  color: var(--navy-dark, #071c35) !important;
+}

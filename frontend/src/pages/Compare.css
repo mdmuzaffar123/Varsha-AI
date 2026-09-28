@@ -1,0 +1,28 @@
+.compare-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 20px 40px;
+}
+
+.compare-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .compare-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .compare-page-container {
+    padding: 12px 12px 30px;
+  }
+}

@@ -1,0 +1,150 @@
+.rainfall-chart-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rcc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rcc-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rcc-icon {
+  color: #1677ff;
+}
+
+.rcc-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+}
+
+.rcc-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rcc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rcc-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.rcc-legend-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.rcc-chart-container {
+  display: flex;
+  gap: 10px;
+  height: 170px;
+  padding: 10px 0 0;
+}
+
+.rcc-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  padding-bottom: 22px;
+  text-align: right;
+  width: 20px;
+}
+
+.rcc-bars-grid {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.rcc-grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(226, 232, 240, 0.7);
+  pointer-events: none;
+}
+
+.gl-60 { top: 0%; }
+.gl-40 { top: 33%; }
+.gl-20 { top: 66%; }
+.gl-0  { top: 100%; }
+
+.rcc-date-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.rcc-bars-cluster {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.rcc-bar-column {
+  width: 14px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.rcc-bar-fill {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  transition: height 0.4s ease;
+}
+
+.rcc-bar-column:hover .rcc-bar-fill {
+  filter: brightness(1.15);
+}
+
+.rcc-date-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  position: absolute;
+  bottom: -20px;
+  white-space: nowrap;
+}

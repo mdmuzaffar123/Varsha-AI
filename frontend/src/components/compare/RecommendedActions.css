@@ -1,0 +1,72 @@
+.recommended-actions-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.rec-icon {
+  color: #16b86a;
+}
+
+.rec-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+}
+
+.rec-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rec-loc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rec-loc-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+}
+
+.rec-bullets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 6px;
+}
+
+.rec-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.rec-check {
+  color: #16b86a;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

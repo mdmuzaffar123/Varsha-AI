@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home, CloudRain, Radio, Cpu, Bell,
@@ -20,17 +19,40 @@ const navItems = [
   { label: "Settings",  route: "/settings",  icon: Settings   },
 ];
 
-export default function Sidebar({ mobileOpen, onMobileClose }) {
-  const [collapsed, setCollapsed] = useState(false);
+export default function Sidebar({
+  collapsed,
+  onToggleCollapsed,
+  onExpandSidebar,
+  mobileOpen,
+  onMobileClose,
+}) {
   const navigate = useNavigate();
   const location = useLocation();
 
   const isActive = (route) =>
     route === "/" ? location.pathname === "/" : location.pathname.startsWith(route);
 
-  const handleNav = (route) => {
+  const handleNav = (route, e) => {
+    e.stopPropagation(); // prevent collapsing event
+    if (collapsed && onExpandSidebar) {
+      onExpandSidebar(); // Expand sidebar full when clicking an option
+    }
     navigate(route);
     if (onMobileClose) onMobileClose();
+  };
+
+  const handleSidebarClick = (e) => {
+    e.stopPropagation(); // keep click inside sidebar from propagating to main content
+    if (collapsed && onExpandSidebar) {
+      onExpandSidebar(); // Expand when clicking anywhere on collapsed sidebar
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.stopPropagation();
+    if (onToggleCollapsed) {
+      onToggleCollapsed();
+    }
   };
 
   return (
@@ -40,9 +62,12 @@ export default function Sidebar({ mobileOpen, onMobileClose }) {
         <div className="sidebar-backdrop" onClick={onMobileClose} />
       )}
 
-      <aside className={`sidebar ${collapsed ? "sidebar--collapsed" : ""} ${mobileOpen ? "sidebar--mobile-open" : ""}`}>
+      <aside
+        className={`sidebar ${collapsed ? "sidebar--collapsed" : ""} ${mobileOpen ? "sidebar--mobile-open" : ""}`}
+        onClick={handleSidebarClick}
+      >
         {/* Logo */}
-        <div className="sidebar-logo">
+        <div className="sidebar-logo" onClick={handleLogoClick} title={collapsed ? "Click to expand VarshaAI menu" : "Click to collapse"}>
           <div className="sidebar-logo-icon">
             <Droplets size={20} color="#20C7D9" />
           </div>
@@ -67,7 +92,7 @@ export default function Sidebar({ mobileOpen, onMobileClose }) {
               <button
                 key={route}
                 className={`sidebar-item ${active ? "sidebar-item--active" : ""}`}
-                onClick={() => handleNav(route)}
+                onClick={(e) => handleNav(route, e)}
                 title={collapsed ? label : undefined}
               >
                 <span className="sidebar-item-icon"><Icon size={18} /></span>
@@ -81,7 +106,10 @@ export default function Sidebar({ mobileOpen, onMobileClose }) {
         {/* Collapse toggle (desktop) */}
         <button
           className="sidebar-collapse-btn"
-          onClick={() => setCollapsed(!collapsed)}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onToggleCollapsed) onToggleCollapsed();
+          }}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}

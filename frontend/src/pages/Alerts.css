@@ -4,7 +4,7 @@
   gap: 4px;
   max-width: 1400px;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding: 18px 20px 40px;
 }
 
 .alerts-main-two-col {
@@ -37,5 +37,11 @@
   }
   .alerts-row-two-col {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .alerts-page-container {
+    padding: 12px 12px 30px;
   }
 }
