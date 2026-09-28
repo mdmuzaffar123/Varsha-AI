@@ -1,0 +1,31 @@
+﻿.placeholder-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--bg);
+}
+.placeholder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  box-shadow: var(--shadow-md);
+  max-width: 420px;
+  width: 100%;
+}
+.placeholder-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(22,119,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.placeholder-title { font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.placeholder-desc  { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.placeholder-btn   { margin-top: 8px; }

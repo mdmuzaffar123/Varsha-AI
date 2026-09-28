@@ -1,0 +1,46 @@
+﻿.wtt-wrapper {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.wtt-scroll {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 20px;
+  gap: 4px;
+}
+.wtt-scroll::-webkit-scrollbar { display: none; }
+
+.wtt-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 16px;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+.wtt-tab:hover { color: var(--text-primary); background: var(--bg); border-radius: 8px 8px 0 0; }
+.wtt-tab--active {
+  color: var(--blue-primary) !important;
+  border-bottom-color: var(--blue-primary) !important;
+  font-weight: 600;
+}
+.wtt-tab--special { color: #F59E0B; }
+.wtt-tab--special:hover { color: #D97706; }
+.wtt-tab--special.wtt-tab--active { color: #D97706 !important; border-bottom-color: #D97706 !important; }
+
+@media (max-width: 600px) {
+  .wtt-tab { padding: 12px 12px; font-size: 12px; }
+}

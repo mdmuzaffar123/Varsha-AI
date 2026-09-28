@@ -1,0 +1,72 @@
+.forecast-dashboard-page {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  min-height: 100%;
+  padding-bottom: 30px;
+}
+
+/* Middle 3-Column Section (Map + Hourly & AI Insights + 7-Day Forecast) */
+.forecast-middle-grid {
+  display: grid;
+  grid-template-columns: 46% 30% 24%;
+  gap: 14px;
+  padding: 0 24px 18px;
+  align-items: stretch;
+}
+
+.fmiddle-map-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.fmiddle-hourly-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  height: 100%;
+}
+
+.fmiddle-sevenday-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Bottom 4-Column Section */
+.forecast-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 0 24px;
+  align-items: stretch;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1380px) {
+  .forecast-middle-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fmiddle-sevenday-col {
+    grid-column: span 2;
+  }
+  .forecast-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .forecast-middle-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px 14px;
+  }
+  .fmiddle-sevenday-col {
+    grid-column: span 1;
+  }
+  .forecast-bottom-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px 20px;
+  }
+}

@@ -1,0 +1,33 @@
+﻿.wm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.wm-grid--wide { grid-template-columns: repeat(3, 1fr); }
+
+.wm-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  border-top: 3px solid var(--accent, var(--blue-primary));
+}
+.wm-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.wm-icon-wrap {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+}
+.wm-value { font-size: 22px; font-weight: 800; line-height: 1; margin-bottom: 5px; }
+.wm-label { font-size: 12px; color: var(--text-secondary); font-weight: 500; }
+
+@media (max-width: 960px) {
+  .wm-grid, .wm-grid--wide { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .wm-grid, .wm-grid--wide { grid-template-columns: repeat(2, 1fr); }
+}

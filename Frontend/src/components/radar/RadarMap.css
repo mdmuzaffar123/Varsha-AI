@@ -1,0 +1,526 @@
+.radar-main-map-card {
+  position: relative;
+  background: #071C35;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 500px;
+  box-shadow: 0 2px 8px rgba(7, 28, 53, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.radar-card-fullscreen {
+  position: fixed !important;
+  inset: 14px !important;
+  z-index: 9999 !important;
+  height: auto !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6) !important;
+}
+
+.radar-leaflet-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ── 1. Floating Top-Left Search Bar ── */
+.radar-map-floating-search {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.radar-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.radar-search-input {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(7, 28, 53, 0.15);
+  border-radius: 8px;
+  padding: 7px 32px 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--navy-dark);
+  width: 220px;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+
+.radar-search-input:focus {
+  background: #ffffff;
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.2);
+}
+
+.radar-search-icon {
+  position: absolute;
+  right: 10px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.radar-locate-search-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(7, 28, 53, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+
+.radar-locate-search-btn:hover {
+  background: #ffffff;
+  color: var(--blue-primary);
+}
+
+/* ── 2. Floating Left Vertical Mode Tabs (Matching Reference) ── */
+.radar-map-left-modes-menu {
+  position: absolute;
+  top: 56px;
+  left: 14px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(7, 28, 53, 0.12);
+  border-radius: 10px;
+  padding: 4px;
+  gap: 3px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  width: 140px;
+}
+
+.radar-left-mode-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6.5px 10px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: var(--navy-dark);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  text-align: left;
+}
+
+.radar-left-mode-tab:hover {
+  background: #F1F5F9;
+}
+
+.radar-left-mode-tab.active {
+  background: var(--blue-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(22, 119, 255, 0.35);
+}
+
+.rlm-icon {
+  flex-shrink: 0;
+}
+
+.rlm-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── 3. Doppler Radar Clouds & Blurring ── */
+.radar-cloud-fringe {
+  filter: blur(14px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.radar-cloud-mid {
+  filter: blur(8px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.radar-cloud-core {
+  filter: blur(4px);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* Simulation Pulse Animation (Only when isPlaying is TRUE) */
+.radar-pulse-anim.radar-cloud-fringe {
+  animation: rpulseFringe 1.6s ease-in-out infinite alternate;
+}
+
+.radar-pulse-anim.radar-cloud-mid {
+  animation: rpulseMid 1.4s ease-in-out infinite alternate;
+}
+
+.radar-pulse-anim.radar-cloud-core {
+  animation: rpulseCore 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes rpulseFringe {
+  0% { transform: scale(0.95); opacity: 0.3; }
+  100% { transform: scale(1.08); opacity: 0.55; }
+}
+
+@keyframes rpulseMid {
+  0% { transform: scale(0.92); opacity: 0.5; }
+  100% { transform: scale(1.12); opacity: 0.75; }
+}
+
+@keyframes rpulseCore {
+  0% { transform: scale(0.9); opacity: 0.75; }
+  100% { transform: scale(1.18); opacity: 1; }
+}
+
+/* Cell Tooltip */
+.radar-cell-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.rc-tip {
+  background: rgba(7, 28, 53, 0.92);
+  color: #ffffff;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── 4. Station Red Location Pin ── */
+.custom-radar-station-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.radar-center-pin-wrap {
+  position: relative;
+  width: 34px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -100%);
+}
+
+.radar-center-pin-svg {
+  position: relative;
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
+
+.radar-center-pin-wrap:hover .radar-center-pin-svg {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.radar-center-pulse-ring {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #EF4444;
+  transform: translate(-50%, 50%) rotateX(60deg);
+  animation: rpinWave 1.6s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+  z-index: 1;
+}
+
+@keyframes rpinWave {
+  0% { width: 8px; height: 4px; opacity: 1; }
+  100% { width: 42px; height: 18px; opacity: 0; }
+}
+
+/* Station Label Tooltip */
+.radar-station-pill-tip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.station-pill-box {
+  background: #ffffff;
+  color: var(--navy-dark);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(7, 28, 53, 0.12);
+}
+
+/* District Labels */
+.radar-district-permanent-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 2px #000 !important;
+}
+
+.state-border-label {
+  font-size: 11.5px !important;
+  color: #93C5FD !important;
+  font-style: italic;
+}
+
+/* ── 5. Map Bottom-Left Action Controls ── */
+.radar-map-bottom-left-controls {
+  position: absolute;
+  bottom: 60px;
+  left: 14px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rm-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(7, 28, 53, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: all 0.15s ease;
+}
+
+.rm-btn:hover {
+  background: #ffffff;
+  color: var(--blue-primary);
+}
+
+.rm-btn.active {
+  background: var(--blue-primary);
+  color: #ffffff;
+}
+
+/* Layers Popover */
+.radar-layers-popover-wrap {
+  position: relative;
+}
+
+.radar-layers-popover-menu {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  background: rgba(7, 28, 53, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  animation: rlpIn 0.15s ease-out;
+  z-index: 600;
+}
+
+@keyframes rlpIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.rlp-header {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94A3B8;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.rlp-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #F8FAFC;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rlp-item input[type="checkbox"] {
+  accent-color: var(--blue-primary);
+  cursor: pointer;
+}
+
+/* ── 6. Floating Bottom Timeline Player Bar ── */
+.radar-map-bottom-timeline-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(7, 28, 53, 0.12);
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.radar-timeline-play-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.35);
+  transition: all 0.15s ease;
+}
+
+.radar-timeline-play-btn:hover {
+  background: #0958d9;
+}
+
+.radar-timeline-play-btn.playing {
+  background: #EF4444;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+}
+
+.radar-timeline-track-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+  padding: 0 4px;
+}
+
+.radar-timeline-track-flex::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  height: 3px;
+  background: #E2E8F0;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.radar-tstep-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.rtstep-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #94A3B8;
+  border: 2px solid #ffffff;
+  transition: all 0.15s ease;
+}
+
+.radar-tstep-node.passed .rtstep-dot {
+  background: var(--blue-primary);
+}
+
+.radar-tstep-node.selected .rtstep-dot {
+  background: #ffffff;
+  border: 2.5px solid var(--blue-primary);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.3);
+  transform: scale(1.3);
+}
+
+.rtstep-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.radar-tstep-node.selected .rtstep-label {
+  color: var(--blue-primary);
+  font-weight: 800;
+}
+
+.radar-timeline-time-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  white-space: nowrap;
+  background: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.radar-timeline-fs-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.radar-timeline-fs-btn:hover {
+  background: #F1F5F9;
+  color: var(--navy-dark);
+}
+
+@media (max-width: 800px) {
+  .radar-map-left-modes-menu {
+    display: none;
+  }
+  .radar-timeline-time-badge {
+    display: none;
+  }
+}

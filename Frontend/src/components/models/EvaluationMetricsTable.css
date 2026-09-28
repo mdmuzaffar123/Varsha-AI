@@ -1,0 +1,82 @@
+.eval-metrics-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+}
+
+.emc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emc-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.emc-table-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow-x: auto;
+}
+
+.emc-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: left;
+}
+
+.emc-table th {
+  padding: 8px 10px;
+  background: #F0F7FF;
+  color: var(--navy-dark);
+  font-weight: 700;
+  font-size: 11.5px;
+  border-bottom: 1.5px solid #BAE0FF;
+}
+
+.emc-table td {
+  padding: 8.5px 10px;
+  border-bottom: 1px solid #F1F5F9;
+  color: var(--navy-dark);
+}
+
+.emc-metric-name {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.emc-metric-val {
+  font-weight: 700;
+  text-align: right;
+  font-size: 12.5px;
+}
+
+.bold-row td {
+  background: rgba(22, 119, 255, 0.05);
+}
+
+.bold-row .emc-metric-name {
+  color: var(--navy-dark);
+  font-weight: 800;
+}
+
+.bold-row .emc-metric-val {
+  color: var(--blue-primary);
+  font-weight: 800;
+  font-size: 13.5px;
+}

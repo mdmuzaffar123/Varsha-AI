@@ -1,0 +1,65 @@
+.training-loss-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+}
+
+.tlc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tlc-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.tlc-legend-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tlc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tlc-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+}
+
+.tlc-dot.blue { background: #1677FF; }
+.tlc-dot.green { background: #10B981; }
+
+.tlc-svg-wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tlc-svg-chart {
+  width: 100%;
+  height: 180px;
+  display: block;
+}

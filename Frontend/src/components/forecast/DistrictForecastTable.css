@@ -1,0 +1,135 @@
+.district-table-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px 14px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  justify-content: space-between;
+}
+
+.dtable-header {
+  margin-bottom: 10px;
+}
+
+.dtable-title-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dtable-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dtable-container {
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dtable-container::-webkit-scrollbar {
+  display: none;
+}
+
+.dtable-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  height: 100%;
+}
+
+.dtable-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.dtable-table th {
+  padding: 8px 4px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dtable-table th.dth-left {
+  text-align: left;
+  padding-left: 2px;
+}
+
+.dtable-row {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.dtable-row:last-child {
+  border-bottom: none;
+}
+
+.dtable-row:hover {
+  background: rgba(245, 249, 253, 0.95);
+}
+
+.dtable-row.selected {
+  background: rgba(22, 119, 255, 0.08);
+}
+
+.dtable-table td {
+  padding: 8px 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dtd-district-name {
+  text-align: left !important;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-left: 2px !important;
+  font-size: 12.5px;
+}
+
+.dtd-num {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+/* Risk Badges */
+.dtd-risk-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.dtd-risk-pill.risk-high {
+  background: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.dtd-risk-pill.risk-medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #D97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.dtd-risk-pill.risk-low {
+  background: rgba(22, 184, 106, 0.12);
+  color: #16B86A;
+  border: 1px solid rgba(22, 184, 106, 0.25);
+}
+
+.dtd-arrow {
+  color: #94A3B8;
+  padding-right: 2px !important;
+  width: 16px;
+}

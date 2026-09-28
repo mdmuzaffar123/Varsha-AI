@@ -1,0 +1,171 @@
+.forecast-bottom-data-section {
+  padding: 16px 24px 0;
+}
+
+.fb-data-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 4-Item Telemetry Ingest Grid */
+.fb-data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.fb-data-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fb-data-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fb-data-icon-wrap.radar {
+  background: rgba(22, 119, 255, 0.1);
+  color: #1677FF;
+}
+
+.fb-data-icon-wrap.sat {
+  background: rgba(32, 199, 217, 0.12);
+  color: #0284C7;
+}
+
+.fb-data-icon-wrap.ai {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8B5CF6;
+}
+
+.fb-data-icon-wrap.conf {
+  background: rgba(22, 184, 106, 0.12);
+  color: #16B86A;
+}
+
+.fb-data-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fb-data-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.fb-data-value {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.fb-data-value.conf-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #16B86A;
+}
+
+.fb-conf-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16B86A;
+  display: inline-block;
+  box-shadow: 0 0 6px #16B86A;
+}
+
+/* Sync info bar */
+.fb-sync-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fb-sync-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fb-sync-left strong {
+  color: var(--text-primary);
+}
+
+.fb-spin-icon {
+  color: var(--blue-primary);
+}
+
+.fb-next-cycle {
+  background: rgba(22, 119, 255, 0.08);
+  color: var(--blue-primary);
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid rgba(22, 119, 255, 0.2);
+}
+
+/* Disclaimer advisory */
+.fb-advisory-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 9px;
+  padding: 10px 14px;
+}
+
+.fb-alert-icon {
+  color: #F59E0B;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.fb-advisory-note p {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fb-advisory-note strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .fb-data-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .fb-data-grid {
+    grid-template-columns: 1fr;
+  }
+  .forecast-bottom-data-section {
+    padding: 14px 16px 0;
+  }
+}

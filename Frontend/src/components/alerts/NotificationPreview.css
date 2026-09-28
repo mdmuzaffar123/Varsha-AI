@@ -1,0 +1,154 @@
+.notification-preview-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.npr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.npr-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.npr-icon {
+  color: #1677ff;
+}
+
+.npr-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+}
+
+.npr-link-btn {
+  background: transparent;
+  border: none;
+  color: #1677ff;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.npr-link-btn:hover {
+  background: #f0f7ff;
+}
+
+.npr-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+.npr-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.npr-toggle-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.npr-toggle-item:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.npr-toggle-item.active {
+  border-color: rgba(22, 119, 255, 0.3);
+  background: rgba(22, 119, 255, 0.03);
+}
+
+.npr-ti-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.npr-ti-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy-dark, #071c35);
+}
+
+.npr-ti-status {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.npr-ti-status.on {
+  color: #16b86a;
+}
+
+.npr-ti-status.off {
+  color: #94a3b8;
+}
+
+/* Custom Switch */
+.npr-switch {
+  width: 32px;
+  height: 18px;
+  background: #cbd5e1;
+  border-radius: 9px;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.npr-switch.checked {
+  background: #1677ff;
+}
+
+.npr-switch-thumb {
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.npr-switch.checked .npr-switch-thumb {
+  transform: translateX(14px);
+}
+
+@media (max-width: 900px) {
+  .npr-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .npr-grid {
+    grid-template-columns: 1fr;
+  }
+}

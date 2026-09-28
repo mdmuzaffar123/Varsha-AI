@@ -1,0 +1,113 @@
+.risk-assess-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px 14px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  justify-content: space-between;
+}
+
+.rassess-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.rassess-title-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.rassess-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.rassess-info-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: color 0.15s ease;
+}
+
+.rassess-info-btn:hover {
+  color: var(--blue-primary);
+}
+
+.rassess-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  gap: 12px;
+}
+
+.rassess-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.rassess-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.rassess-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rassess-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rassess-item-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.rassess-level-tag {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Progress bar container */
+.rassess-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: rgba(226, 232, 240, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100px;
+}
+
+.rassess-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}

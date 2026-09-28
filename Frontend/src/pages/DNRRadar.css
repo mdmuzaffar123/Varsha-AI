@@ -1,0 +1,75 @@
+.dnr-radar-page-container {
+  padding: 20px 24px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+}
+
+/* ── 3. Middle Main Section Grid: 68% Map + 32% Side ── */
+.radar-middle-main-grid {
+  display: grid;
+  grid-template-columns: 1.85fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.rmain-map-column {
+  min-width: 0;
+}
+
+.rmain-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ── 4. Bottom 3-Card Grid (Matching Reference Screenshot) ── */
+.radar-bottom-cards-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.3fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.rbottom-col-insights {
+  min-width: 0;
+}
+
+.rbottom-col-frames {
+  min-width: 0;
+}
+
+.rbottom-col-specs {
+  min-width: 0;
+}
+
+/* ── 5. Technical Row: Storm Cells & Pipeline ── */
+.radar-technical-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+@media (max-width: 1200px) {
+  .radar-middle-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .radar-bottom-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .radar-technical-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dnr-radar-page-container {
+    padding: 14px 12px 30px;
+    gap: 14px;
+  }
+}

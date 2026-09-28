@@ -1,0 +1,52 @@
+.ai-models-page-container {
+  padding: 20px 24px 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+}
+
+/* ── 3. Middle Section: Input Sources (Left) + Prediction Map (Right) ── */
+.models-middle-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.models-middle-left-col {
+  min-width: 0;
+}
+
+.models-middle-right-col {
+  min-width: 0;
+}
+
+/* ── 4. Bottom 4-Card Grid (Exact Match with Reference Mockup) ── */
+.models-bottom-four-cards-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.88fr 1.45fr 1.12fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+@media (max-width: 1200px) {
+  .models-middle-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .models-bottom-four-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-models-page-container {
+    padding: 14px 12px 30px;
+    gap: 14px;
+  }
+  .models-bottom-four-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

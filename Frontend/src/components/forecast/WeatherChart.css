@@ -1,0 +1,101 @@
+﻿.wchart-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.wchart-header { margin-bottom: 20px; }
+.wchart-title { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+.wchart-sub   { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
+
+.wchart-body { display: flex; gap: 8px; }
+
+.wchart-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  width: 32px;
+  flex-shrink: 0;
+}
+.wchart-ylabel { font-size: 10px; color: var(--text-secondary); text-align: right; }
+
+.wchart-area {
+  flex: 1;
+  position: relative;
+  min-height: 160px;
+}
+.wchart-grid-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+  pointer-events: none;
+}
+
+.wchart-bars {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  height: 160px;
+  padding-bottom: 0;
+}
+.wchart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 6px;
+}
+.wchart-bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.wchart-peak-badge {
+  position: absolute;
+  top: -20px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--blue-primary);
+  background: rgba(22,119,255,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.wchart-bar {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, #1677FF 0%, #2388FF 100%);
+  position: relative;
+  min-height: 4px;
+  transition: height 0.4s ease;
+  display: flex;
+  justify-content: center;
+}
+.wchart-bar--storm { background: linear-gradient(180deg, #F59E0B 0%, #F97316 100%); }
+.wchart-bar--lightning { background: linear-gradient(180deg, #7C3AED 0%, #A855F7 100%); }
+.wchart-bar--peak { background: linear-gradient(180deg, #EF4444 0%, #F97316 100%) !important; }
+
+.wchart-bar-val {
+  position: absolute;
+  top: -18px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.wchart-xlabel {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}

@@ -1,0 +1,86 @@
+﻿.leaflet-map-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0B2748;
+}
+
+/* Fix leaflet z-index conflicts with sidebar */
+.leaflet-pane,
+.leaflet-tile-pane,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane { z-index: auto !important; }
+.leaflet-top, .leaflet-bottom { z-index: 400 !important; }
+
+/* Ranchi custom marker */
+.ranchi-marker { position: relative; width: 24px; height: 24px; }
+.ranchi-dot {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #1677FF;
+  border: 2px solid #fff;
+  box-shadow: 0 0 8px rgba(22,119,255,0.8);
+  z-index: 2;
+}
+.ranchi-ring {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(22,119,255,0.2);
+  border: 1.5px solid rgba(22,119,255,0.5);
+  animation: ringPulse 2s ease-in-out infinite;
+}
+@keyframes ringPulse {
+  0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.8; }
+  50%      { transform: translate(-50%,-50%) scale(1.4); opacity: 0.3; }
+}
+
+/* Lightning zap icon */
+.zap-icon { font-size: 16px; filter: drop-shadow(0 0 5px currentColor); }
+.zap-icon--recent { font-size: 20px; animation: zapFlash 1.2s ease-in-out infinite; }
+@keyframes zapFlash {
+  0%,100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+/* Radar live badge */
+.radar-status-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(7,28,53,0.82);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 500;
+  pointer-events: none;
+}
+
+/* Popup */
+.map-popup { font-family: Inter, sans-serif; font-size: 13px; line-height: 1.6; }
+.map-popup strong { display: block; font-size: 14px; margin-bottom: 4px; color: #071B3A; }
+.map-popup div { color: #64748B; }
+
+/* Storm cell pulse animation (injected via Leaflet SVG className) */
+.storm-animated path { animation: svgPulse 2s ease-in-out infinite; }
+@keyframes svgPulse {
+  0%,100% { opacity: 0.9; r: attr(r); }
+  50%      { opacity: 0.5; }
+}
+
+/* Zap icon animation states */
+.zap-icon { font-size: 16px; line-height: 1; display: block; filter: drop-shadow(0 0 4px currentColor); }
+.zap-icon--recent  { font-size: 22px; }
+.zap-icon--animate { animation: zapFlash 1s ease-in-out infinite; }
+@keyframes zapFlash {
+  0%,100% { opacity: 1;   transform: scale(1);   }
+  50%      { opacity: 0.3; transform: scale(1.3); }
+}

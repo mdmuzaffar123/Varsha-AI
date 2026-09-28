@@ -1,0 +1,44 @@
+﻿/* ── Global shell ───────────────────────────────────── */
+/* sidebar + main column sit side-by-side at full viewport height */
+.dashboard-shell {
+  display: flex;
+  height: 100vh;          /* full viewport */
+  overflow: hidden;       /* each column scrolls independently */
+  background: var(--bg);
+}
+
+/* ── Right column (TopHeader stacked above content) ── */
+.dashboard-main {
+  flex: 1;
+  min-width: 0;           /* prevent flex blowout */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Scrollable page content ───────────────────────── */
+/* TopHeader is sticky/fixed at 64px; content area scrolls below it */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.dashboard-content::-webkit-scrollbar { width: 5px; }
+.dashboard-content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.dashboard-content::-webkit-scrollbar-track { background: transparent; }
+
+/* ── Mobile: sidebar becomes fixed overlay ─────────── */
+@media (max-width: 960px) {
+  .dashboard-shell {
+    display: block;       /* stacked; sidebar uses fixed positioning */
+    height: 100vh;
+    overflow: hidden;
+  }
+  .dashboard-main {
+    width: 100%;
+    height: 100vh;
+  }
+}

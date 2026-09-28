@@ -1,0 +1,197 @@
+.hourly-chart-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Expand downwards to fill the column space */
+  min-height: 250px;
+}
+
+.hchart-header {
+  margin-bottom: 14px;
+}
+
+.hchart-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hchart-body {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  flex: 1; /* Fill the card height */
+  min-height: 180px;
+}
+
+/* Y-Axis */
+.hchart-yaxis-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  width: 44px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hchart-yaxis-unit {
+  position: absolute;
+  top: 45%;
+  left: -20px;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.hchart-yticks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 6px;
+}
+
+.hchart-yticks span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+/* Bars Container */
+.hchart-bars-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hchart-gridlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  pointer-events: none;
+}
+
+.hgrid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(226, 232, 240, 0.7);
+}
+
+/* 24 Bars */
+.hchart-bars-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  flex: 1;
+  min-height: 160px;
+  position: relative;
+  z-index: 2;
+  padding: 0 4px;
+}
+
+.hbar-column {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+
+.hbar-fill-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hbar-fill {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #38BDF8 0%, #1677FF 100%);
+  transition: all 0.25s ease;
+  min-height: 4px;
+}
+
+.hbar-column:hover .hbar-fill {
+  background: linear-gradient(180deg, #20C7D9 0%, #1677FF 100%);
+  filter: brightness(1.1);
+}
+
+.hbar-fill.peak-bar {
+  background: linear-gradient(180deg, #8B5CF6 0%, #1677FF 100%) !important;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+/* Floating Peak Tooltip */
+.hbar-peak-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 1px solid #FDE68A;
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.htip-time {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.htip-val {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--blue-primary);
+}
+
+.htip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #ffffff;
+}
+
+/* X-Axis Ticks */
+.hchart-xaxis-ticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 4px 0;
+  height: 22px;
+}
+
+.hchart-xaxis-ticks span {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,50 @@
+﻿.wi-card {
+  background: linear-gradient(135deg, rgba(22,119,255,0.05) 0%, rgba(32,199,217,0.05) 100%);
+  border: 1px solid rgba(22,119,255,0.2);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.wi-card--special {
+  background: linear-gradient(135deg, rgba(245,158,11,0.07) 0%, rgba(239,68,68,0.05) 100%);
+  border-color: rgba(245,158,11,0.25);
+}
+.wi-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.wi-icon-wrap {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  background: rgba(22,119,255,0.12);
+  color: var(--blue-primary);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.wi-card--special .wi-icon-wrap { background: rgba(245,158,11,0.12); color: #F59E0B; }
+.wi-title-group { display: flex; flex-direction: column; gap: 3px; }
+.wi-title { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+.wi-demo-badge { font-size: 10px; color: var(--text-secondary); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; width: fit-content; }
+.wi-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }
+.wi-explain-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(22,119,255,0.3);
+  background: rgba(22,119,255,0.08);
+  color: var(--blue-primary);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.wi-explain-btn:hover { background: var(--blue-primary); color: #fff; border-color: var(--blue-primary); }
+
+/* Modal */
+.wi-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.wi-modal { background: #fff; border-radius: 16px; padding: 28px; width: 100%; max-width: 520px; }
+.wi-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.wi-modal-title  { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.wi-modal-close  { width: 32px; height: 32px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-secondary); transition: all 0.15s; }
+.wi-modal-close:hover { background: #EF4444; color: #fff; border-color: #EF4444; }
+.wi-modal-badge { font-size: 11px; color: #F59E0B; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); border-radius: 6px; padding: 4px 10px; width: fit-content; margin-bottom: 16px; }
+.wi-modal-text  { font-size: 14px; color: var(--text-secondary); line-height: 1.75; }

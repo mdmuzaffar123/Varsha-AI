@@ -1,0 +1,112 @@
+.radar-pipeline-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rpipe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rpipe-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rpipe-icon-spark {
+  color: var(--blue-primary);
+}
+
+.rpipe-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.rpipe-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.rpipe-steps-scroll {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.rpipe-step-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 130px;
+  max-width: 140px;
+  flex: 1;
+  position: relative;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.rpipe-step-box:hover {
+  border-color: var(--blue-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(7, 28, 53, 0.06);
+}
+
+.rpipe-step-num {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94A3B8;
+}
+
+.rpipe-step-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(22, 119, 255, 0.1);
+  color: var(--blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 8px;
+}
+
+.rpipe-step-name {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.rpipe-step-desc {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.rpipe-arrow-divider {
+  display: flex;
+  align-items: center;
+  color: #94A3B8;
+  flex-shrink: 0;
+}

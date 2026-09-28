@@ -1,0 +1,194 @@
+.prediction-output-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pred-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pred-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.pred-mode-dropdown-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--navy-dark);
+  cursor: pointer;
+}
+
+/* ── Leaflet Canvas Wrapper ── */
+.pred-map-wrapper {
+  position: relative;
+  height: 250px;
+  background: #071C35;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pred-heat-layer {
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.pred-district-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 2px #000 !important;
+}
+
+/* Red Pin */
+.custom-pred-red-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.pred-pin-wrap {
+  position: relative;
+  width: 32px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -100%);
+}
+
+.pred-pin-svg {
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+}
+
+.pred-pin-box-tip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.pred-pin-bubble {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 3px 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(7, 28, 53, 0.12);
+  line-height: 1.2;
+}
+
+.ppb-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy-dark);
+}
+
+.ppb-val {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ── Zoom Controls (Bottom Left) ── */
+.pred-map-zoom-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pmz-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(7, 28, 53, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-dark);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.12s ease;
+}
+
+.pmz-btn:hover {
+  background: #ffffff;
+  color: var(--blue-primary);
+}
+
+/* ── Vertical 0-200mm Scale Legend (Right side of map) ── */
+.pred-map-vertical-legend {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  right: 12px;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(7, 28, 53, 0.12);
+  border-radius: 7px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.pmvl-bar {
+  width: 8px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to bottom,
+    #991B1B 0%,
+    #EF4444 20%,
+    #F97316 40%,
+    #FACC15 60%,
+    #10B981 80%,
+    #06B6D4 100%
+  );
+}
+
+.pmvl-ticks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1px 0;
+}
+
+.pmvl-tick-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  line-height: 1;
+}

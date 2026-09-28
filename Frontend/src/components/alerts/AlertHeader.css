@@ -1,0 +1,179 @@
+.alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  margin-bottom: 16px;
+}
+
+.ah-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ah-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ah-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.ah-demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(22, 119, 255, 0.08);
+  color: #1677ff;
+  border: 1px solid rgba(22, 119, 255, 0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ah-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16b86a;
+  box-shadow: 0 0 6px #16b86a;
+}
+
+.ah-subtitle {
+  font-size: 13px;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ah-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ah-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ah-select-icon {
+  position: absolute;
+  left: 10px;
+  color: #1677ff;
+  pointer-events: none;
+}
+
+.ah-select {
+  appearance: none;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 14px 8px 32px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy-dark, #071c35);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.ah-select:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.ah-select:focus {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.1);
+}
+
+.ah-btn-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: var(--navy-dark, #071c35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ah-btn-icon:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #1677ff;
+}
+
+.ah-bell-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 1.5px solid #ffffff;
+}
+
+.ah-btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1677ff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(22, 119, 255, 0.2);
+}
+
+.ah-btn-refresh:hover {
+  background: #0958d9;
+}
+
+.ah-btn-refresh.spin svg {
+  animation: ahSpin 0.7s linear infinite;
+}
+
+@keyframes ahSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .alert-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ah-controls-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,118 @@
+.end-to-end-workflow-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.e2e-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.e2e-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.e2e-spark-icon {
+  color: var(--blue-primary);
+}
+
+.e2e-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.e2e-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.e2e-steps-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.e2e-step-node {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 140px;
+  flex: 1;
+  position: relative;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.e2e-step-node:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue-primary);
+  box-shadow: 0 4px 12px rgba(7, 28, 53, 0.06);
+}
+
+.e2e-step-badge {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94A3B8;
+}
+
+.e2e-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(22, 119, 255, 0.1);
+  color: var(--blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 10px;
+}
+
+.e2e-step-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 4px;
+}
+
+.e2e-step-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.e2e-arrow-separator {
+  display: flex;
+  align-items: center;
+  color: #CBD5E1;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .e2e-steps-flow {
+    overflow-x: auto;
+  }
+}

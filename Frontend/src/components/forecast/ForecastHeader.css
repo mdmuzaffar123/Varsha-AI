@@ -1,0 +1,229 @@
+.forecast-header-card {
+  padding: 20px 24px 14px;
+  background: transparent;
+}
+
+/* Top Title + Selectors */
+.fheader-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.fheader-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fheader-main-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.fheader-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Right Selectors */
+.fheader-selectors {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fheader-dropdown-wrap {
+  position: relative;
+}
+
+.fheader-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.fheader-select-btn:hover {
+  border-color: var(--blue-primary);
+  background: #fdfdfd;
+}
+
+.fheader-pin-icon {
+  color: var(--blue-primary);
+}
+
+.fheader-chevron {
+  color: var(--text-secondary);
+  margin-left: 2px;
+}
+
+.fheader-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  min-width: 140px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fheader-dropdown-item {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.fheader-dropdown-item:hover,
+.fheader-dropdown-item.active {
+  background: rgba(22, 119, 255, 0.08);
+  color: var(--blue-primary);
+  font-weight: 600;
+}
+
+.fheader-date-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.fheader-cal-icon {
+  color: var(--blue-primary);
+}
+
+/* Nav row: Weather Tabs + Time Filter */
+.fheader-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.fheader-weather-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+.fheader-weather-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.fheader-wtab {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: rgba(22, 119, 255, 0.04);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.fheader-wtab:hover {
+  color: var(--text-primary);
+  background: rgba(22, 119, 255, 0.08);
+}
+
+.fheader-wtab.active {
+  background: var(--blue-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.28);
+}
+
+/* Time Filters */
+.fheader-time-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.fheader-time-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.fheader-tbtn {
+  padding: 7px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.fheader-tbtn:hover {
+  border-color: var(--blue-primary);
+  color: var(--text-primary);
+}
+
+.fheader-tbtn.active {
+  background: var(--blue-primary) !important;
+  border-color: var(--blue-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.25);
+}
+
+@media (max-width: 960px) {
+  .forecast-header-card {
+    padding: 16px 16px 12px;
+  }
+  .fheader-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .fheader-nav-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

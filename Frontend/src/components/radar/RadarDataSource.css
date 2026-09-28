@@ -1,0 +1,93 @@
+.radar-data-source-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rds-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rds-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.rds-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rds-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.rds-item:hover {
+  border-color: #CBD5E1;
+  transform: translateX(2px);
+}
+
+.rds-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rds-icon-wrap.blue {
+  background: rgba(22, 119, 255, 0.12);
+  color: var(--blue-primary);
+}
+
+.rds-icon-wrap.cyan {
+  background: rgba(6, 182, 212, 0.12);
+  color: #06B6D4;
+}
+
+.rds-icon-wrap.purple {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8B5CF6;
+}
+
+.rds-icon-wrap.emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+
+.rds-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rds-lbl {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.rds-val {
+  font-size: 12px;
+  color: var(--navy-dark);
+  font-weight: 700;
+}

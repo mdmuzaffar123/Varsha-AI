@@ -1,0 +1,126 @@
+.alert-pipeline-card {
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(7, 28, 53, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.apl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apl-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+}
+
+.apl-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #1677ff;
+  background: rgba(22, 119, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.apl-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+.apl-stages-grid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 0;
+}
+
+.apl-stage-card {
+  flex: 1;
+  min-width: 140px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apl-sc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apl-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: #1677ff;
+  background: rgba(22, 119, 255, 0.1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.apl-icon-box {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apl-stage-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.apl-stage-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--navy-dark, #071c35);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.apl-stage-desc {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.apl-arrow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.apl-arrow {
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .apl-stages-grid {
+    flex-wrap: nowrap;
+  }
+}
